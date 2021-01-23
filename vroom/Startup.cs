@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using vroom.AppDBContext;
+using vroom.Models;
 
 namespace vroom
 {
@@ -51,6 +52,11 @@ namespace vroom
 
             app.UseEndpoints(endpoints =>
             {
+                //endpoints.MapControllerRoute(
+                //    "ByYearMonth",
+                //    "make/bikes/{year:int}/{month:int}",
+                //    new {controller="Make",action="ByYearMonth"}
+                //    );
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
