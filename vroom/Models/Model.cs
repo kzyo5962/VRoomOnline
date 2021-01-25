@@ -17,6 +17,6 @@ namespace vroom.Models
         public Make Make { get; set; }
 
         [ForeignKey("Make")]
-        public int MakeFK { get; set; }
+        public int MakeID { get; set; }
     }
 }
