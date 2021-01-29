@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using vroom.AppDBContext;
+using vroom.Data;
 using vroom.Models;
 
 namespace vroom
@@ -42,10 +43,12 @@ namespace vroom
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddScoped<IDBInitializer, DBInitializer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDBInitializer dBInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -64,6 +67,9 @@ namespace vroom
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            dBInitializer.Initialize();
+
 
                 app.UseEndpoints(endpoints =>
                 {
