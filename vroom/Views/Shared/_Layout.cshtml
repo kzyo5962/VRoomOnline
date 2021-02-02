@@ -29,8 +29,9 @@
                                 Manage
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" asp-controller="Make" asp-action="Index">Make</a>
-                                <a class="dropdown-item" asp-controller="Model" asp-action="Index">Model</a>
+                                <a class="dropdown-item" asp-controller="Make" asp-action="Index">Makes</a>
+                                <a class="dropdown-item" asp-controller="Model" asp-action="Index">Models</a>
+                                <a class="dropdown-item" asp-controller="Bike" asp-action="Index">Bikes</a>
                                 @if (User.IsInRole("Admin"))
                                 {
                                     <a class="dropdown-item" id="register" asp-area="Identity" asp-page="/Account/Register">Add new user</a>

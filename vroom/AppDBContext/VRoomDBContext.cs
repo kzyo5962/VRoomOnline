@@ -18,6 +18,7 @@ namespace vroom.AppDBContext
         }
         public DbSet<Make> Makes { get; set; }
         public DbSet<Model> Models { get; set; }
+        public DbSet<Bike> Bikes { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     }
 }
