@@ -14,12 +14,14 @@
         </div>
         <div class="col-4">
             <select asp-for="Bike.MakeID" asp-items="Model.Makes.ToSelectListItem()" class="form-control"></select>
+            <span asp-validation-for="Bike.MakeID" class="text-danger"></span>
         </div>
         <div class="col-1">
             <label asp-for="Bike.ImagePath"></label>
         </div>
         <div class="col-4">
             <input type="file" name="files" class="form-control-file" />
+            <span asp-validation-for="Bike.ImagePath" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group row">
@@ -28,6 +30,7 @@
         </div>
         <div class="col-4">
             <select asp-for="Bike.ModelID" asp-items="Model.Models.ToSelectListItem()" class="form-control"></select>
+            <span asp-validation-for="Bike.ModelID" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group row">
@@ -36,6 +39,7 @@
         </div>
         <div class="col-4">
             <input asp-for="Bike.Year" class="form-control" />
+            <span asp-validation-for="Bike.Year" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group row">
@@ -44,6 +48,7 @@
         </div>
         <div class="col-4">
             <input asp-for="Bike.Mileage" class="form-control" />
+            <span asp-validation-for="Bike.Mileage" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group row">
@@ -52,12 +57,14 @@
         </div>
         <div class="col-4">
             <input asp-for="Bike.Price" class="form-control" />
+            <span asp-validation-for="Bike.Price" class="text-danger"></span>
         </div>
         <div class="col-1">
             <label asp-for="Bike.Currency"></label>
         </div>
         <div class="col-2">
             <select asp-for="Bike.Currency" asp-items="Model.Currencies.ToSelectListItem()" class="form-control"></select>
+            <span asp-validation-for="Bike.Currency" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group row">
@@ -66,6 +73,7 @@
         </div>
         <div class="col-4">
             <textarea asp-for="Bike.Features" class="form-control" rows="5"></textarea>
+            <span asp-validation-for="Bike.Features" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group row">
@@ -74,6 +82,7 @@
         </div>
         <div class="col-4">
             <input asp-for="Bike.SellerName" class="form-control" />
+            <span asp-validation-for="Bike.SellerName" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group row">
@@ -82,6 +91,7 @@
         </div>
         <div class="col-4">
             <input asp-for="Bike.SellerEmail" class="form-control" />
+            <span asp-validation-for="Bike.SellerEmail" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group row">
@@ -90,6 +100,7 @@
         </div>
         <div class="col-4">
             <input asp-for="Bike.SellerPhone" class="form-control" />
+            <span asp-validation-for="Bike.SellerPhone" class="text-danger"></span>
         </div>
     </div>
     <br />
@@ -101,3 +112,6 @@
 </form>
 
 
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

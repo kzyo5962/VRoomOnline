@@ -17,6 +17,7 @@ namespace vroom.Models
         public Make Make { get; set; }
 
         [ForeignKey("Make")]
+        [RegularExpression(@"^[1-9]*$", ErrorMessage = "Select Make")]
         public int MakeID { get; set; }
     }
 }
