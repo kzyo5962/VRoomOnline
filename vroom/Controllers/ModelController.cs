@@ -80,5 +80,21 @@ namespace vroom.Controllers
             _db.SaveChanges();
             return RedirectToAction(nameof(Index)); 
         }
+
+
+        //api
+        [AllowAnonymous]
+        [HttpGet("api/models")]
+        public IEnumerable<Model> Models()
+        {
+            return _db.Models.ToList();
+        }
+
+        [AllowAnonymous]
+        [HttpGet("api/models/{MakeID}")]
+        public IEnumerable<Model> Model(int MakeID)
+        {
+            return _db.Models.Where(m => m.MakeID == MakeID).ToList();
+        }
     }
 }
